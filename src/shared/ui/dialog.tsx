@@ -15,7 +15,7 @@ export const Dialog: FC<DialogProps> = ({ children, title }) => {
     }
 
     return (
-        <div className={cn("bg-[#00000080] z-20 fixed transition-all h-screen w-screen", isOpen ? 'inset-0' : 'top-[-100%]')}>
+        <div className={cn("bg-[#00000080] z-30 fixed transition-all h-screen w-screen", isOpen ? 'inset-0' : 'top-[-100%]')}>
             <div className="modal-box mx-auto mt-40">
                 <form method="dialog">
                     <button onClick={handleClose} className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>

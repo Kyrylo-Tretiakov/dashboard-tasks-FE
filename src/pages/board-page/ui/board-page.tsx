@@ -2,6 +2,8 @@
 import { Board } from '@/entities/board';
 import { Column } from '@/entities/column';
 import { Task } from '@/entities/task';
+import { AddColumn } from '@/features/add-column';
+import { AddTask } from '@/features/add-taks';
 import React, { useState } from 'react';
 import { DragDropContext, Draggable, DropResult, Droppable } from 'react-beautiful-dnd';
 
@@ -40,6 +42,7 @@ const initialColumns: ColumnType[] = [
     title: 'Done',
     tasks: [{ id: '4', text: 'Task 4' }],
   },
+
 ];
 
 
@@ -83,7 +86,7 @@ const BoardPage: React.FC = () => {
     <div className='overflow-hidden'>
       <Board >
         <DragDropContext onDragEnd={onDragEnd}>
-          <div className="flex space-x-4">
+          <div className="flex space-x-4 overflow-x-scroll no-scrollbar">
             {columns.map((column, index) => (
               <Droppable key={index} droppableId={column.id} >
                 {(provided) => (
@@ -101,11 +104,13 @@ const BoardPage: React.FC = () => {
                         }
                       </Draggable>
                     ))}
+                    <AddTask columnId={column.id} />
                     {provided.placeholder}
                   </Column>
                 )}
               </Droppable>
             ))}
+            <AddColumn />
           </div>
         </DragDropContext>
       </Board>

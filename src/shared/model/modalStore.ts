@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 
-export type ModalType = 'createBoard' | 'editTask';
+export type ModalType = 'createBoard' | 'editTask' | 'deleteBoard';
 
 interface ModalStore {
     type: ModalType | null;

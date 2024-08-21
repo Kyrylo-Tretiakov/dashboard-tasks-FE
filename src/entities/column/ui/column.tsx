@@ -20,7 +20,7 @@ export const Column: FC<ColumnProps> = ({ children, provided, title }) => {
 
     return (
         <div ref={provided.innerRef}
-            {...provided.droppableProps} className="bg-lightPurple p-4 w-[335px] h-full overflow-y-hidden rounded-2xl">
+            {...provided.droppableProps} className="bg-lightPurple p-4 min-w-[335px] max-w-[335px] h-full overflow-y-hidden rounded-2xl">
             <div className="flex px-2 pb-8 text-darkPurple font-bold text-lg items-center gap-x-2">
                 <EditableInput
                     className="text-darkPurple cursor-pointer text-lg font-bold"
@@ -29,7 +29,7 @@ export const Column: FC<ColumnProps> = ({ children, provided, title }) => {
                     onSubmit={onEditTitle}
                 />
             </div>
-            <div className="flex flex-col overflow-y-scroll no-scrollbar h-[500px] pb-10 gap-y-[10px]">
+            <div className="flex flex-col overflow-y-scroll no-scrollbar h-[calc(100vh-330px)] pb-10 gap-y-[10px]">
                 {children}
             </div>
         </div>

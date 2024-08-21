@@ -6,31 +6,36 @@ import { AiOutlineClose } from "react-icons/ai";
 import { cn } from "../lib/tailwind-merge";
 
 interface EditableInputProps {
-    className: string;
+    className?: string;
     onSubmit: (value: string) => void;
     defaultValue: string;
     icon?: ReactNode;
+    inputClassName?: string;
+    tooltipPlacement?: 'bottom' | 'top' | 'left' | 'right';
+    tooltipText?: string;
 }
 
-export const EditableInput: FC<EditableInputProps> = ({ className, onSubmit, defaultValue, icon }) => {
+export const EditableInput: FC<EditableInputProps> = ({ inputClassName, className, onSubmit, defaultValue, icon, tooltipPlacement = 'bottom', tooltipText = 'Click to edit' }) => {
     const [editable, setEditable] = useState(false);
     const [value, setValue] = useState<string>('');
 
     return (
         <div>
             {!editable ?
-                <span
-                    onClick={() => setEditable(true)}
-                    className={cn('flex items-center gap-x-2', className)}
-                >
-                    {icon}{defaultValue}
-                </span> :
+                <div className={`tooltip cursor-pointer tooltip-${tooltipPlacement}`} data-tip={tooltipText}>
+                    <span
+                        onClick={() => setEditable(true)}
+                        className={cn('flex items-center gap-x-2', className)}
+                    >
+                        {icon}{defaultValue}
+                    </span>
+                </div>
+                :
                 <div className="relative flex gap-x-2 items-center">
-                    {icon}
                     <input
                         autoFocus
                         onBlur={() => setEditable(false)}
-                        className="input  max-w-xs input-sm"
+                        className={cn("input  max-w-xs input-sm", inputClassName)}
                         value={value}
                         onChange={(e) => setValue(e.target.value)}
                         defaultValue={defaultValue}

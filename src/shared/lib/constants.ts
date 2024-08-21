@@ -1,7 +1,8 @@
 export enum AppRoutes {
     welcome = '/welcome',
-    dashboard = '/dashboard',
-    home = '/home',
+    board = '/board',
     signIn = '/sign-in',
-    signUp = '/sign-up'
+    signUp = '/sign-up',
+    invitedBoards = '/invitedBoards',
+    myBoards = '/myBoards'
 }

@@ -10,13 +10,12 @@ export const WelcomePage = () => {
 
     const handleSignIn = () => {
         if (isSignedIn) {
-            return router.push(AppRoutes.home)
+            return router.push(AppRoutes.myBoards)
         }
         router.push(AppRoutes.signIn)
     }
 
     const handleSignUp = () => {
-        router.push(AppRoutes.signUp)
     }
 
     return (
@@ -26,7 +25,11 @@ export const WelcomePage = () => {
                     <h1 className="font-bold text-[60px]">Welcome to Task Managment service</h1>
                     <div className="flex mt-5 justify-center items-center gap-x-4">
                         <button onClick={handleSignIn} className="btn w-40 btn-default btn-lg">Sign in</button>
-                        <button onClick={handleSignUp} className="btn w-40 btn-outline btn-active btn-lg">Sign up</button>
+                        <button onClick={() => router.push(AppRoutes.signUp)}
+                            className="btn w-40 btn-outline btn-active btn-lg"
+                        >
+                            Sign up
+                        </button>
                     </div>
                 </div >
             </WavyBackground >

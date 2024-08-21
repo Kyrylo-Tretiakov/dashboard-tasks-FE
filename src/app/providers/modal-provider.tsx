@@ -1,6 +1,7 @@
 'use client'
 
 import { CreateBoardModal } from "@/features/create-board"
+import { DeleteBoardModal } from "@/features/deleteBoard";
 import { EditTaskModal } from "@/features/edit-task";
 import { ModalType, useModal } from "@/shared/model/modalStore"
 
@@ -9,8 +10,8 @@ export const ModalProvider = () => {
 
     const modalByType = {
         'createBoard': <CreateBoardModal />,
-        'editTask': <EditTaskModal />
-
+        'editTask': <EditTaskModal />,
+        'deleteBoard': <DeleteBoardModal />
     }
 
     return (
