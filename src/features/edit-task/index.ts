@@ -1,1 +1,1 @@
-export * from "./ui/edit-task"
+export * from "./ui/edit-task";
