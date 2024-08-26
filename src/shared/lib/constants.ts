@@ -20,7 +20,7 @@ export enum ApiRoutes {
     createColumn = '/column/create',
     updateColumn = '/column/update',
     deleteColumn = '/column/delete',
-    column = '/column'
+    column = '/column',
 
     //Task
 

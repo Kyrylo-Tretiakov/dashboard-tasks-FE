@@ -1,5 +1,5 @@
 "use client";
-import MyBoardsPage from "@/pages/my-boards-page/ui/my-boards-page";
+import MyBoardsPage from "@/views/my-boards-page/ui/my-boards-page";
 
 const MyBoards = () => {
 	return <MyBoardsPage />;

@@ -1,5 +1,6 @@
 "use client";
-import { WelcomePage } from "@/pages/welcome-page/ui/welcome";
+
+import WelcomePage from "@/views/welcome-page/ui/welcome";
 
 export default function Welcome() {
 	return <WelcomePage />;

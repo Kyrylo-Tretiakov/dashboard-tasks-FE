@@ -1,4 +1,4 @@
-import BoardPage from "@/pages/board-page/ui/board-page";
+import BoardPage from "@/views/board-page/ui/board-page";
 
 const Board = () => {
 	return <BoardPage />;
