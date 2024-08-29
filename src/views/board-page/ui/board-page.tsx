@@ -79,7 +79,7 @@ const BoardPage = () => {
 		<div className="overflow-hidden">
 			<Board boardName={board?.boardName ?? "Uknown"}>
 				<DragDropContext onDragEnd={onDragEnd}>
-					<div className="flex space-x-4 overflow-x-scroll no-scrollbar">
+					<div className="flex gap-x-4 overflow-x-scroll no-scrollbar">
 						{columns.map((column, columnIndex) => (
 							<Droppable key={columnIndex} droppableId={column.id}>
 								{(provided) => (

@@ -14,7 +14,7 @@ export default function RootLayout({
 				<body suppressHydrationWarning={false}>
 					<QueryProvider>
 						<ToastProivder />
-						<div className="h-full w-full overflow-hidden">
+						<div data-theme="light" className="h-full w-full overflow-hidden">
 							<ModalProvider>{children}</ModalProvider>
 						</div>
 					</QueryProvider>

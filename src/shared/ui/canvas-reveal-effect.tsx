@@ -24,7 +24,7 @@ export const CanvasRevealEffect = ({
 	showGradient?: boolean;
 }) => {
 	return (
-		<div className={cn("h-full relative bg-white w-full", containerClassName)}>
+		<div className={cn("h-full relative bg-emerald-800 w-full", containerClassName)}>
 			<div className="h-full w-full">
 				<DotMatrix
 					colors={colors ?? [[0, 255, 255]]}
@@ -140,16 +140,14 @@ const DotMatrix: React.FC<DotMatrixProps> = ({
         }
         void main() {
             vec2 st = fragCoord.xy;
-            ${
-							center.includes("x")
-								? "st.x -= abs(floor((mod(u_resolution.x, u_total_size) - u_dot_size) * 0.5));"
-								: ""
-						}
-            ${
-							center.includes("y")
-								? "st.y -= abs(floor((mod(u_resolution.y, u_total_size) - u_dot_size) * 0.5));"
-								: ""
-						}
+            ${center.includes("x")
+					? "st.x -= abs(floor((mod(u_resolution.x, u_total_size) - u_dot_size) * 0.5));"
+					: ""
+				}
+            ${center.includes("y")
+					? "st.y -= abs(floor((mod(u_resolution.y, u_total_size) - u_dot_size) * 0.5));"
+					: ""
+				}
       float opacity = step(0.0, st.x);
       opacity *= step(0.0, st.y);
 

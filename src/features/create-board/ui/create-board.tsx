@@ -33,7 +33,7 @@ export const CreateBoardModal = () => {
 		resolver: yupResolver(creatBoardSchema),
 		mode: "onChange",
 	});
-	const { mutateAsync } = useMutate({
+	const { mutateAsync, isPending } = useMutate({
 		onSuccess: async () => {
 			await queryClient.invalidateQueries({
 				queryKey: [QueryKeys.Boards, user?.id],
@@ -83,7 +83,7 @@ export const CreateBoardModal = () => {
 					label="What is your board description?"
 					placeholder="Board Description"
 				/>
-				<button type="submit" className="btn btn-neutral mt-[12px] px-10">
+				<button disabled={isPending} type="submit" className="btn btn-neutral mt-[12px] px-10">
 					Create
 				</button>
 			</form>

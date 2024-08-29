@@ -14,7 +14,7 @@ const WelcomePage = () => {
 		<>
 			<WavyBackground className="absolute z-10">
 				<div className="text-white">
-					<h1 className="font-bold text-[60px]">
+					<h1 className="font-bold text-[60px]" style={{ fontSize: '60px', marginBottom: '20px' }}>
 						Welcome to Task Managment service
 					</h1>
 					<div className="flex mt-5 justify-center items-center gap-x-4">

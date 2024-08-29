@@ -19,12 +19,12 @@ export const BoardItem = ({
 		<div
 			onMouseEnter={() => setHovered(true)}
 			onMouseLeave={() => setHovered(false)}
-			className="border flex-shrink-0 bg-white border-black/[0.2] group/canvas-card flex items-center justify-center dark:border-white/[0.2]  max-w-[300px] w-full mx-auto p-4  h-[350px] relative"
+			className="border mr-10 flex-shrink-0 bg-white border-black/[0.2] group/canvas-card flex items-center justify-center max-w-[300px] w-full mx-auto p-4  h-[350px] relative"
 		>
-			<Icon className="absolute h-6 w-6 -top-3 -left-3 dark:text-white text-black" />
-			<Icon className="absolute h-6 w-6 -bottom-3 -left-3 dark:text-white text-black" />
-			<Icon className="absolute h-6 w-6 -top-3 -right-3 dark:text-white text-black" />
-			<Icon className="absolute h-6 w-6 -bottom-3 -right-3 dark:text-white text-black" />
+			<Icon className="absolute h-6 w-6 -top-3 -left-3  text-black" />
+			<Icon className="absolute h-6 w-6 -bottom-3 -left-3  text-black" />
+			<Icon className="absolute h-6 w-6 -top-3 -right-3  text-black" />
+			<Icon className="absolute h-6 w-6 -bottom-3 -right-3  text-black" />
 
 			<AnimatePresence>
 				{hovered && (
@@ -45,7 +45,7 @@ export const BoardItem = ({
 						<span className="text-lg font-bold">{board?.boardName}</span>
 					</div>
 				) : (
-					<div className="dark:text-white  flex flex-col text-xl opacity-0 group-hover/canvas-card:opacity-100 relative z-[1] text-black mt-4  font-bold group-hover/canvas-card:text-white group-hover/canvas-card:-translate-y-2 transition duration-200">
+					<div className="flex flex-col text-xl opacity-0 group-hover/canvas-card:opacity-100 relative z-[1] text-black mt-4  font-bold group-hover/canvas-card:text-white group-hover/canvas-card:-translate-y-2 transition duration-200">
 						<span className="text-center  mb-2 font-bold">
 							{board?.boardName}
 						</span>

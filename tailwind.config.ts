@@ -21,7 +21,10 @@ const config: Config = {
 			},
 		},
 	},
-	plugins: [require("daisyui"), addVariablesForColors],
+	plugins: [
+		require("daisyui"),
+		addVariablesForColors
+	]
 };
 
 function addVariablesForColors({ addBase, theme }: any) {
